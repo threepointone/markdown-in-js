@@ -14,6 +14,7 @@ you can <i>inline *html*</i>
   interpolate attributes as expected
 </div>
 `
+```
 
 - gets compiled to react elements via a babel plugin
 - preserves interpolations 
