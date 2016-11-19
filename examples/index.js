@@ -10,8 +10,6 @@ render(<App/>, window.app)
 // let x = md `here`
 
 let x = markdown`
-${<M.a/>}
-
 This is some text <span style=${{ fontWeight: 'bold' }}> we _here_ </span>
 
 This is more text. And some more. And more. 
