@@ -13,7 +13,7 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
-        plugins: [ path.join(__dirname, '../lib') ]
+        plugins: [ path.join(__dirname, '../lib/babel.js') ]
       }
     }, {
       test: /\.json$/,
