@@ -5,13 +5,16 @@
   "main": "lib/index.js",
   "author": "Sunil Pai <threepointone@gmail.com>",
   "license": "MIT",
-  "files": [ "lib" ],
+  "files": [
+    "lib"
+  ],
   "prepublish": "npm run build",
   "scripts": {
     "start": "webpack-dev-server --config examples/webpack.js",
     "build": "babel src -d lib"
   },
   "dependencies": {
+    "babylon": "^6.14.1",
     "commonmark": "^0.27.0"
   },
   "devDependencies": {
@@ -25,7 +28,6 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
-    "babylon": "^6.14.1",
     "eslint": "^3.10.2",
     "eslint-config-rackt": "^1.1.1",
     "eslint-plugin-react": "^6.7.1",
