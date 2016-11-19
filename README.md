@@ -22,7 +22,7 @@ you can <i>inline *html*</i>
 
 usage
 ---
-add `'markdown-in-js/babel'` to the `plugins` field of your babel config
+add `'markdown-in-js/lib/babel'` to the `plugins` field of your babel config
 
 
 todo
