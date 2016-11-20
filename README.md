@@ -6,6 +6,7 @@ zero-overhead markdown in your react components
 ```jsx 
 const App = () => markdown`
 ## This is some content. 
+You can write _markdown_ as you'd like. 
 
 ${ <span> interpolate more <Content/> </span> }
 
@@ -27,7 +28,10 @@ add `'markdown-in-js/lib/babel'` to the `plugins` field of your babel config
 
 todo
 ---
+
+- code highlighting via prism.js
 - optionally no-wrap paragraphs 
+- optionally return array of elements
 - custom components for markdown primitives  
 - `@markdown <custom>` pragma
 - tests!
