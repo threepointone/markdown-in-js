@@ -1,6 +1,6 @@
 {
   "name": "markdown-in-js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "markdown in js ",
   "main": "lib/index.js",
   "author": "Sunil Pai <threepointone@gmail.com>",
