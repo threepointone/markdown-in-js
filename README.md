@@ -65,4 +65,5 @@ todo
 - optionally return array of elements
 - instructions for in-editor syntax highlighting 
 - precompile code blocks 
+- commonmark options
 - tests!
