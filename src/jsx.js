@@ -56,7 +56,7 @@ export default class JSXRenderer extends Renderer {
   }
 
   linebreak() {
-    this.tag('br', [], true)
+    this.tag('_m_.br', [], true)
     this.cr()
   }
 
@@ -69,9 +69,9 @@ export default class JSXRenderer extends Renderer {
       if (node.title) {
         attrs.push([ 'title', esc(node.title, true) ])
       }
-      this.tag('a', attrs)
+      this.tag('_m_.a', attrs)
     } else {
-      this.tag('/a')
+      this.tag('/_m_.a')
     }
   }
 
@@ -79,9 +79,9 @@ export default class JSXRenderer extends Renderer {
     if (entering) {
       if (this.disableTags === 0) {
         if (this.options.safe && potentiallyUnsafe(node.destination)) {
-          this.lit('<img src="" alt="')
+          this.lit('<_m_.img src="" alt="')
         } else {
-          this.lit('<img src="' + esc(node.destination, true) +
+          this.lit('<_m_.img src="' + esc(node.destination, true) +
                 '" alt="')
         }
       }
@@ -98,11 +98,11 @@ export default class JSXRenderer extends Renderer {
   }
 
   emph(node, entering) {
-    this.tag(entering ? 'em' : '/em')
+    this.tag(entering ? '_m_.em' : '/_m_.em')
   }
 
   strong(node, entering) {
-    this.tag(entering ? 'strong' : '/strong')
+    this.tag(entering ? '_m_.strong' : '/_m_.strong')
   }
 
   paragraph(node, entering) {
@@ -116,15 +116,15 @@ export default class JSXRenderer extends Renderer {
     }
     if (entering) {
       this.cr()
-      this.tag('p', attrs)
+      this.tag('_m_.p', attrs)
     } else {
-      this.tag('/p')
+      this.tag('/_m_.p')
       this.cr()
     }
   }
 
   heading(node, entering) {
-    let tagname = 'h' + node.level
+    let tagname = '_m_.h' + node.level
       , attrs = this.attrs(node)
     if (entering) {
       this.cr()
@@ -136,9 +136,9 @@ export default class JSXRenderer extends Renderer {
   }
 
   code(node) {
-    this.tag('code')
+    this.tag('_m_.code')
     this.out(node.literal)
-    this.tag('/code')
+    this.tag('/_m_.code')
   }
 
   code_block(node) {
@@ -149,18 +149,18 @@ export default class JSXRenderer extends Renderer {
       attrs.push([ 'className', 'language-' + esc(info_words[0], true) ])
     }
     this.cr()
-    this.tag('pre')
-    this.tag('code', attrs)
+    this.tag('_m_.pre')
+    this.tag('_m_.code', attrs)
     this.out(`{\`${node.literal}\`}`)
-    this.tag('/code')
-    this.tag('/pre')
+    this.tag('/_m_.code')
+    this.tag('/_m_.pre')
     this.cr()
   }
 
   thematic_break(node) {
     let attrs = this.attrs(node)
     this.cr()
-    this.tag('hr', attrs, true)
+    this.tag('_m_.hr', attrs, true)
     this.cr()
   }
 
@@ -168,11 +168,11 @@ export default class JSXRenderer extends Renderer {
     let attrs = this.attrs(node)
     if (entering) {
       this.cr()
-      this.tag('blockquote', attrs)
+      this.tag('_m_.blockquote', attrs)
       this.cr()
     } else {
       this.cr()
-      this.tag('/blockquote')
+      this.tag('/_m_.blockquote')
       this.cr()
     }
   }
@@ -187,11 +187,11 @@ export default class JSXRenderer extends Renderer {
         attrs.push([ 'start', start.toString() ])
       }
       this.cr()
-      this.tag(tagname, attrs)
+      this.tag('_m_.' + tagname, attrs)
       this.cr()
     } else {
       this.cr()
-      this.tag('/' + tagname)
+      this.tag('/_m_.' + tagname)
       this.cr()
     }
   }
@@ -199,15 +199,14 @@ export default class JSXRenderer extends Renderer {
   item(node, entering) {
     let attrs = this.attrs(node)
     if (entering) {
-      this.tag('li', attrs)
+      this.tag('_m_.li', attrs)
     } else {
-      this.tag('/li')
+      this.tag('/_m_.li')
       this.cr()
     }
   }
 
   html_inline(node) {
-    // console.log(node)
     if (this.options.safe) {
       this.lit('<!-- raw HTML omitted -->')
     } else {
@@ -216,7 +215,6 @@ export default class JSXRenderer extends Renderer {
   }
 
   html_block(node) {
-    // console.log(node)
     this.cr()
     if (this.options.safe) {
       this.lit('<!-- raw HTML omitted -->')
