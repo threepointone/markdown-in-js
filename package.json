@@ -6,7 +6,8 @@
   "author": "Sunil Pai <threepointone@gmail.com>",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib",
+    "babel.js"
   ],
   "scripts": {
     "start": "webpack-dev-server --config examples/webpack.js",
