@@ -20,6 +20,11 @@ module.exports = {
       loader: 'json-loader'
     } ]  
   },  
+  resolve: {
+    alias: {
+      'markdown-in-js': '../src'
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
