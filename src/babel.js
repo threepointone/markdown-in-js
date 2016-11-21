@@ -25,8 +25,7 @@ module.exports = {
         let parsed = reader.parse(src)
         let intermediateSrc = writer.render(parsed)
         // replace with stubs 
-        let regex = /spur\-[0-9]+/gm
-        let newSrc = intermediateSrc.replace(regex, x => `{${stubCtx[x]}}`)
+        let newSrc = intermediateSrc.replace(/spur\-[0-9]+/gm, x => `{${stubCtx[x]}}`)
         let transformed = babylon.parse(`<div className='_markdown_'>${newSrc}</div>`, { plugins: [
           'jsx', 'flow', 'doExpressions', 'objectRestSpread', 'decorators', 'classProperties',
           'exportExtensions', 'asyncGenerators', 'functionBind', 'functionSent', 'dynamicImport' ]

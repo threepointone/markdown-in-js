@@ -142,6 +142,7 @@ export default class JSXRenderer extends Renderer {
   }
 
   code_block(node) {
+
     let info_words = node.info ? node.info.split(/\s+/) : []
       , attrs = this.attrs(node)
     if (info_words.length > 0 && info_words[0].length > 0) {
@@ -150,7 +151,7 @@ export default class JSXRenderer extends Renderer {
     this.cr()
     this.tag('pre')
     this.tag('code', attrs)
-    this.out(node.literal)
+    this.out(`{\`${node.literal}\`}`)
     this.tag('/code')
     this.tag('/pre')
     this.cr()

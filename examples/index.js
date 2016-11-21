@@ -3,16 +3,18 @@ import { render } from 'react-dom'
 
 import markdown from '../src' // so the linter won't complain
 
-const App = () => <div>hello world</div>
-
-render(<App/>, window.app)
-
-// let x = md `here`
-
-let x = markdown`
+const App = () => markdown`
 This is some text <span style=${{ fontWeight: 'bold' }}> we _here_ </span>
 
 This is more text. And some more. And more. 
+\`\`\`jsx
+let x = alpha
+function xyz(){
+
+}
+\`\`\`
+
+here's some \`inline code\`
 
 ${'I interpolated some text here'}
 
@@ -35,3 +37,7 @@ This is an H2
 
 ###### This is an H6
 `
+
+
+render(<App/>, window.app)
+

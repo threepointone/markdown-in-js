@@ -13,7 +13,7 @@ export default class Renderer {
         this[type](event.node, event.entering)
       }
       else {
-        // console.log('missed', event.node)
+        // console.log('missed', event.node.type)
       }
     }
     return this.buffer
