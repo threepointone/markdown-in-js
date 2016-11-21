@@ -15,8 +15,7 @@ const markdown = (o, fn) => {
       'code': 'code', 'pre': 'pre', 'hr': 'hr', 'blockquote': 'blockquote',
       'ul': 'ul', 'ol': 'ol', 'li': 'li', ...o
     })
-  }
-  
+  }  
 }
 
 module.exports = markdown

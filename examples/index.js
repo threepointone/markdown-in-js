@@ -1,14 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import markdown from '../src' // so the linter won't complain
+import md from '../src' 
 
 function log() {
   console.log(this) //eslint-disable-line
-  return this
+  return this 
 }
 
-const App = () => markdown({ h1: 'h2' })`
+const App = () => md({ h1: 'h2' })`
 # title
 
 This is some text <span style=${{ fontWeight: 'bold' }}> we _here_ </span>

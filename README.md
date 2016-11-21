@@ -3,6 +3,11 @@ markdown-in-js
 
 zero-overhead markdown in your react components 
 
+usage
+---
+
+add `'markdown-in-js/babel'` to the `plugins` field of your babel config
+
 ```jsx 
 import markdown /* or `md` */ from 'markdown-in-js' 
 
@@ -25,8 +30,12 @@ you can <i>inline *html*</i> or even <OtherComponents/>, wow
 - gets compiled to react elements via a babel plugin
 - preserves interpolations 
 - built with [commonmark](https://github.com/jgm/commonmark.js)
+- optionally add [prismjs](http://prismjs.com/) for syntax highlighting of code blocks 
 
-You can use custom components like so - 
+custom components
+---
+
+You can use custom components for markdown primitives like so - 
 ```jsx
 import md from 'markdown-in-js'
 import { MyHeading, MyLink } from './path/to/components'
@@ -37,11 +46,16 @@ const App = () => md({ h1: MyHeading, a: MyLink })`
 `
 ```
 
-usage
+pragma
 ---
 
-- add `'markdown-in-js/babel'` to the `plugins` field of your babel config
-- (optional) add [prismjs](http://prismjs.com/) for syntax highlighting of code blocks 
+To use a differently named function / variable, you can override the markdown pragma - 
+```jsx
+// @markdown myMd
+let myMd = require('markdown-in-js')({ h1: customHeader })
+// ...
+mMyd`# custom title` 
+```
 
 
 todo
@@ -49,5 +63,6 @@ todo
 
 - optionally no-wrap paragraphs 
 - optionally return array of elements
-- `@markdown <custom>` pragma
+- instructions for in-editor syntax highlighting 
+- precompile code blocks 
 - tests!

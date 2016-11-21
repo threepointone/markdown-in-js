@@ -225,7 +225,6 @@ export default class JSXRenderer extends Renderer {
   }
 
   custom_inline(node, entering) {
-
     if (entering && node.onEnter) {
       this.lit(node.onEnter)
     } else if (!entering && node.onExit) {
