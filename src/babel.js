@@ -89,9 +89,7 @@ module.exports = {
                 path.node.tag.type === 'CallExpression' ?
                   code.substring(path.node.tag.arguments[0].start, path.node.tag.arguments[0].end) + ', ' :
                   ''
-                }_m_ => <div className='_markdown_'>${newSrc}</div>)`, { plugins: [
-                  'jsx', 'flow', 'doExpressions', 'objectRestSpread', 'decorators', 'classProperties',
-                  'exportExtensions', 'asyncGenerators', 'functionBind', 'functionSent', 'dynamicImport' ]
+                }_m_ => <div className='_markdown_'>${newSrc}</div>)`, { plugins: ['*']
                 })
               path.replaceWith(transformed.program.body[0])
             }
