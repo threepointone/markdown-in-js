@@ -49,12 +49,6 @@ const App = () => md({ h1: MyHeading, a: MyLink })`
 `
 ```
 
-running examples
----
-
-Before running the examples for the first time you'll need to `npm run self-link`.
-After that you can start webpack with `npm start`.
-
 todo
 ---
 
