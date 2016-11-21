@@ -55,6 +55,7 @@ todo
 - optionally no-wrap paragraphs
 - optionally return array of elements
 - instructions for in-editor syntax highlighting
+- add gotchas to docs
 - precompile code blocks
 - commonmark options
 - tests!
