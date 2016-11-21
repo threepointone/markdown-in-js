@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import md from '../src' 
+import md from 'markdown-in-js'
 
 function log() {
   console.log(this) //eslint-disable-line
-  return this 
+  return this
 }
 
 const App = () => md({ h1: 'h2' })`
@@ -13,7 +13,7 @@ const App = () => md({ h1: 'h2' })`
 
 This is some text <span style=${{ fontWeight: 'bold' }}> we _here_ </span>
 
-This is more text. And some more. And more. 
+This is more text. And some more. And more.
 \`\`\`jsx
 let x = alpha
 function xyz(){
