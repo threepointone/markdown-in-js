@@ -32,7 +32,6 @@ usage
 
 - add `'markdown-in-js/babel'` to the `plugins` field of your babel config
 - (optional) add [prismjs](http://prismjs.com/) for syntax highlighting of code blocks 
-- `import markdown from 
 
 todo
 ---
