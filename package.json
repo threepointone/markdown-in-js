@@ -10,6 +10,7 @@
     "babel.js"
   ],
   "scripts": {
+    "self-link": "ln -s ../ ./node_modules/markdown-in-js",
     "start": "webpack-dev-server --config examples/webpack.js",
     "build": "babel src -d lib",
     "prepublish": "npm run build"
