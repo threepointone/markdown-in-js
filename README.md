@@ -10,9 +10,6 @@ add `'markdown-in-js/babel'` to the `plugins` field of your babel config
 
 ```jsx
 import markdown from 'markdown-in-js'
-// or
-// var markdown = require('markdown-in-js')
-// (You can use any identifier)
 
 const App = () => markdown`
 ## This is some content.
