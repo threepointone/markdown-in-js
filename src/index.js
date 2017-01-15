@@ -13,7 +13,8 @@ const markdown = (o, fn) => {
       'br': 'br', 'a': 'a', 'img': 'img', 'em': 'em', 'strong': 'strong', 'p': 'p',
       'h1': 'h1', 'h2': 'h2', 'h3': 'h3', 'h4': 'h4', 'h5': 'h5', 'h6': 'h6',
       'code': 'code', 'pre': 'pre', 'hr': 'hr', 'blockquote': 'blockquote',
-      'ul': 'ul', 'ol': 'ol', 'li': 'li', ...o
+      'ul': 'ul', 'ol': 'ol', 'li': 'li', 'table': 'table', 'thead': 'thead',
+      'tbody': 'tbody', 'tr': 'tr', 'td': 'td', 'th': 'th', ...o
     })
   }  
 }

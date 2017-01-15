@@ -4,7 +4,7 @@ import * as babylon from 'babylon'
 
 import commonmark from 'commonmark'
 import JSXRenderer from './jsx'
-
+import { replaceTablesWithHTML, replaceTableStubs } from './table'
 
 module.exports = {
   visitor: {
@@ -81,10 +81,12 @@ module.exports = {
                 }
                 return arr
               }, []).join('')
-              let parsed = reader.parse(src)
+              let parsed = reader.parse(replaceTablesWithHTML(src))
               let intermediateSrc = writer.render(parsed)
               // replace with stubs
-              let newSrc = intermediateSrc.replace(/spur\-[0-9]+/gm, x => `{${stubCtx[x]}}`)
+              let newSrc = replaceTableStubs(
+                intermediateSrc.replace(/spur\-[0-9]+/gm, x => `{${stubCtx[x]}}`)
+              )
               let transformed = babylon.parse(`${tagName}(${
                 path.node.tag.type === 'CallExpression' ?
                   code.substring(path.node.tag.arguments[0].start, path.node.tag.arguments[0].end) + ', ' :

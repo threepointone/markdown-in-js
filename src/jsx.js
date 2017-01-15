@@ -108,6 +108,12 @@ export default class JSXRenderer extends Renderer {
   paragraph(node, entering) {
     let grandparent = node.parent.parent
       , attrs = this.attrs(node)
+
+    if (node.firstChild &&
+        node.firstChild.literal &&
+        node.firstChild.literal.match('spur-element-table')) {
+      return
+    }
     if (grandparent !== null &&
         grandparent.type === 'list') {
       if (grandparent.listTight) {
