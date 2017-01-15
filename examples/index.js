@@ -8,7 +8,11 @@ function log() {
   return this
 }
 
-const App = () => md({ h1: 'h2' })`
+const App = () => md({
+  h1: 'h2',
+  th: ({ children, style }) =>
+    <th style={{ ...style, fontWeight: 'bold' }}>{children}</th>
+})`
 # title
 
 This is some text <span style=${{ fontWeight: 'bold' }}> we _here_ </span>
@@ -43,6 +47,21 @@ This is an H2
 ## This is an H2
 
 ###### This is an H6
+
+Table
+
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
+Table without pipes
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | \`renders\` | **nicely**
+1 | <span style=${{ fontWeight: 'bold' }}>2</span> | 3
+
 `::log()
 
 
