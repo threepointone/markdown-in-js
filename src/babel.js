@@ -5,6 +5,11 @@ import * as babylon from 'babylon'
 import commonmark from 'commonmark'
 import JSXRenderer from './jsx'
 
+let importName = packageName
+
+if (process.env.NODE_ENV === 'test') {
+  importName = '../../lib'
+}
 
 module.exports = {
   visitor: {
@@ -13,7 +18,7 @@ module.exports = {
         let libName
         path.traverse({
           ImportDeclaration(path) {
-            if (path.node.source.value === packageName) {
+            if (path.node.source.value === importName) {
               const specifiers = path.get('specifiers')
               for (const specifier of specifiers) {
                 if (specifier.isImportDefaultSpecifier()) {
@@ -33,7 +38,7 @@ module.exports = {
             }
             const args = path.get('arguments')
             const arg = args[0]
-            if (!arg || !arg.isStringLiteral() || arg.node.value !== packageName) {
+            if (!arg || !arg.isStringLiteral() || arg.node.value !== importName) {
               return
             }
             const parent = path.parentPath()
@@ -100,4 +105,3 @@ module.exports = {
 
   }
 }
-
