@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`markdown-in-js Markdown correctly compiles 1`] = `
+<div
+  className="_markdown_"
+>
+  <h1>
+    title
+  </h1>
+  <p>
+    This is some text 
+    <span
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+       we 
+      <em>
+        here
+      </em>
+       
+    </span>
+  </p>
+  <p>
+    This is more text. And some more. And more.
+  </p>
+  <pre>
+    <code
+      className="language-jsx"
+    >
+      let x = alpha
+      function xyz(){
+      
+      }
+      
+    </code>
+  </pre>
+  <p>
+    here's some 
+    <code>
+      inline code
+    </code>
+  </p>
+  <p>
+    I interpolated some text here
+  </p>
+  <p>
+    and 
+    <span
+      className="someclasssomething else"
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      this is some inline 
+      <em>
+        italicized
+      </em>
+       
+      <em>
+        bold
+      </em>
+       html and this bit is 
+      <em>
+        interpolated
+      </em>
+    </span>
+  </p>
+  <p>
+    and 
+    <span>
+       what about 
+      <em>
+        this
+      </em>
+       
+    </span>
+  </p>
+  <h1>
+    This is an H1
+  </h1>
+  <h2>
+    This is an H2
+  </h2>
+  <h1>
+    This is an H1
+  </h1>
+  <h2>
+    This is an H2
+  </h2>
+  <h6>
+    This is an H6
+  </h6>
+</div>
+`;
