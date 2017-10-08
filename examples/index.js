@@ -14,14 +14,18 @@ const App = () => md({ h1: 'h2' })`
 This is some text <span style=${{ fontWeight: 'bold' }}> we _here_ </span>
 
 This is more text. And some more. And more.
-\`\`\`jsx
-let x = alpha
-function xyz(){
 
+What happens if I want to say 5 > 4?
+
+\`\`\`swift
+func test(_ text: String) -> String {
+    return "hello there: \\\\(text)"
 }
 \`\`\`
 
 here's some \`inline code\`
+
+some inline Swift maybe \`func hello(name: String) -> String {\`
 
 ${'I interpolated some text here'}
 

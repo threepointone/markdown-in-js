@@ -48,7 +48,7 @@ export default class JSXRenderer extends Renderer {
   /* Node methods */
 
   text(node) {
-    this.out(node.literal)
+    this.codeAwareOut(node.literal, false)
   }
 
   softbreak() {
@@ -137,7 +137,7 @@ export default class JSXRenderer extends Renderer {
 
   code(node) {
     this.tag('_m_.code')
-    this.out(node.literal)
+    this.codeAwareOut(`{\`${node.literal}\`}`, true)
     this.tag('/_m_.code')
   }
 
@@ -151,7 +151,7 @@ export default class JSXRenderer extends Renderer {
     this.cr()
     this.tag('_m_.pre')
     this.tag('_m_.code', attrs)
-    this.out(`{\`${node.literal}\`}`)
+    this.codeAwareOut(`{\`${node.literal}\`}`, true)
     this.tag('/_m_.code')
     this.tag('/_m_.pre')
     this.cr()
@@ -244,8 +244,12 @@ export default class JSXRenderer extends Renderer {
 
   /* Helper methods */
 
+  codeAwareOut(s, isCode) {
+    isCode ? this.out(s) : this.out(esc(s, false))
+  }
+
   out(s) {
-    this.lit(esc(s, false))
+    this.lit(s)
   }
 
   attrs(node) {
