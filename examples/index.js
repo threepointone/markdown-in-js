@@ -17,11 +17,11 @@ This is more text. And some more. And more.
 \`\`\`jsx
 let x = alpha
 function xyz(){
-
+  console.log("xyz")
 }
 \`\`\`
 
-here's some \`inline code\`
+here's some \`"inline code"\`
 
 ${'I interpolated some text here'}
 

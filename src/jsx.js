@@ -151,7 +151,7 @@ export default class JSXRenderer extends Renderer {
     this.cr()
     this.tag('_m_.pre')
     this.tag('_m_.code', attrs)
-    this.out(`{\`${node.literal}\`}`)
+    this.lit(`{\`${node.literal}\`}`, false)
     this.tag('/_m_.code')
     this.tag('/_m_.pre')
     this.cr()
