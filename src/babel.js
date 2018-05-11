@@ -37,7 +37,7 @@ module.exports = () => {
               if (!arg || !arg.isStringLiteral() || arg.node.value !== packageName) {
                 return
               }
-              const parent = path.parentPath()
+              const parent = path.parentPath
               if (parent.isVariableDeclarator()) {
                 const id = parent.get('id')
                 if (id.isIdentifier()) {
